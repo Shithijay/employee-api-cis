@@ -11,6 +11,10 @@ var empSvc = new EmployeeService();
 //    res.status(200).json([]);
 // });
 
+router.get("/demo", (req, res) => {
+    res.status(200).json({'data':'sample data from demo'});
+});
+
 router.get("/", async (req, res) => {
     let emps = await empSvc.getAllEmployees()
         .catch(err => res.status(500).json({ 'message': 'Unable to read the employees' }));
